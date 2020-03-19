@@ -11,7 +11,7 @@ function sleep(ms: number) {
 
 async function createDriver() {
   const options = new firefox.Options();
-  options.addArguments('-headless');
+  // options.addArguments('-headless');
 
   return new Builder()
     .forBrowser('firefox')
@@ -32,8 +32,8 @@ async function main() {
   while(true) {
     const driver = await createDriver();
     const graph = await getGraphSelenium(driver);
-    fs.writeFileSync('./public_html/linear.html', graph);
-    await driver.get('file://' + path.resolve('./public_html/linear.html'));
+    fs.writeFileSync('public_html/linear.html', graph);
+    await driver.get('file://' + path.resolve('public_html/linear.html'));
     await driver.manage().window().setRect({width: 720, height: 500});
     const image = await driver.takeScreenshot();
     fs.writeFileSync('./public_html/linear.png', image, 'base64')
