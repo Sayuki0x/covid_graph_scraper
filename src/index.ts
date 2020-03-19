@@ -11,7 +11,7 @@ function sleep(ms: number) {
 
 async function createDriver() {
   const options = new firefox.Options();
-  // options.addArguments('-headless');
+  options.addArguments('-headless');
 
   return new Builder()
     .forBrowser('firefox')
