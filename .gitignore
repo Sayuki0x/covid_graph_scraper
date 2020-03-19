@@ -1,0 +1,5 @@
+public_html/linear.html public_html/linear.png
+node_modules
+./dist
+dist
+**/*.log
