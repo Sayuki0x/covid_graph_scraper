@@ -37,6 +37,7 @@ async function main() {
     await driver.manage().window().setRect({width: 720, height: 500});
     const image = await driver.takeScreenshot();
     fs.writeFileSync('./public_html/linear.png', image, 'base64')
+    console.log('Files updated on disk. Sleeping for 10 min...')
     await sleep(10 * 60 * 1000);
   }
 }
