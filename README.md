@@ -1,6 +1,6 @@
-# typescript-boilerplate
+# covid_graph_scraper
 
-A quick start repo for typescript projects.
+Quickly scrapes the graph off of worldometers.
 
 Contains these tools:
 
