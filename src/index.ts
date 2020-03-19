@@ -32,12 +32,13 @@ async function main() {
   while(true) {
     const driver = await createDriver();
     const graph = await getGraphSelenium(driver);
-    fs.writeFileSync('public_html/linear.html', graph);
-    await driver.get('file://' + path.resolve('public_html/linear.html'));
+    fs.writeFileSync('public_html/index.html', graph);
+    await driver.get('file://' + path.resolve('public_html/index.html'));
     await driver.manage().window().setRect({width: 720, height: 500});
     const image = await driver.takeScreenshot();
     fs.writeFileSync('./public_html/linear.png', image, 'base64')
     console.log('Files updated on disk. Sleeping for 10 min...')
+    driver.quit()
     await sleep(10 * 60 * 1000);
   }
 }
